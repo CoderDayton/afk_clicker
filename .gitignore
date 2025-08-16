@@ -1,0 +1,9 @@
+# Project place file
+/afk_clicker.rbxlx
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+
+# Copilot Instructions
+/.github/

@@ -1,0 +1,45 @@
+{
+    "name": "FREE UGC: Xowaru Clicker",
+    "emitLegacyScripts": true,
+    "tree": {
+        "$className": "DataModel",
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+            "$path": "src/ReplicatedStorage",
+            "$ignoreUnknownInstances": true
+        },
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "$path": "src/ServerScriptService",
+            "$ignoreUnknownInstances": true
+        },
+        "ServerStorage": {
+            "$className": "ServerStorage",
+            "$path": "src/ServerStorage",
+            "$ignoreUnknownInstances": true
+        },
+        "StarterGui": {
+            "$className": "StarterGui",
+            "$path": "src/StarterGui",
+            "$ignoreUnknownInstances": true
+        },
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "StarterPlayerScripts": {
+                "$className": "StarterPlayerScripts",
+                "$path": "src/StarterPlayerScripts",
+                "$ignoreUnknownInstances": true
+            },
+            "StarterCharacterScripts": {
+                "$className": "StarterCharacterScripts",
+                "$path": "src/StarterCharacterScripts",
+                "$ignoreUnknownInstances": true
+            }
+        },
+        "StarterPack": {
+            "$className": "StarterPack",
+            "$path": "src/StarterPack",
+            "$ignoreUnknownInstances": true
+        }
+    }
+}
