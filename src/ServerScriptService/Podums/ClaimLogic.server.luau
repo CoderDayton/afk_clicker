@@ -50,15 +50,17 @@ local function getCachedProductInfo(id, infoType, forceRefresh)
 	metrics.totalRequests += 1
 
 	-- Try to get through the rate limit gate
-	if not MARKETPLACE_GATE:tryRequest() then
+	local waitTime = 0
+	local maxWait = 5 -- Maximum wait time in seconds
+	while not MARKETPLACE_GATE:tryRequest() and waitTime < maxWait do
+		waitTime = waitTime + 0.3 + math.random() * 0.2
 		metrics.rateLimitHits += 1
-		-- If we can't make a request but have cached data, use it even if expired
-		if cached then
-			warn("Rate limited, using expired cache for " .. cacheKey)
-			return cached.info
-		end
-		warn("Rate limited with no cached data for " .. cacheKey)
-		return nil
+		task.wait(waitTime)
+	end
+
+	if waitTime >= maxWait then
+		warn("Request timed out after " .. maxWait .. " seconds for " .. cacheKey)
+		return cached and cached.info or nil
 	end
 
 	-- Exponential backoff with jitter
