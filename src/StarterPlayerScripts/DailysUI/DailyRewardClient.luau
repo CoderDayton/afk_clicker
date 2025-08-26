@@ -4,9 +4,7 @@
     Handles server communication, local state caching, and UI-agnostic logic for daily rewards.
 ]]
 
-local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RR = require(game.ReplicatedStorage.Utils.RobustRequire)
 local TimeGuard = RR.get("ReplicatedStorage.Utils.TimeGuard")
 local RemoteSignal = RR.get("ReplicatedStorage.Utils.RemoteSignal")
@@ -514,7 +512,7 @@ end
 ]]
 function DailyRewardClient:_setupNetworkMonitoring()
 	-- Monitor network connectivity changes
-	self._maid:GiveTask(game:GetService("NetworkClient").NetworkStatusChanged:Connect(function(status)
+	self._maid:GiveTask(game:GetService("ConnectivityService").NetworkStatusChanged:Connect(function(status)
 		if status == Enum.NetworkStatus.Connected then
 			-- Came back online, refresh state
 			self:forceUpdate()
@@ -531,8 +529,8 @@ end
     @return boolean: True if online
 ]]
 function DailyRewardClient:_isOnline(): boolean
-	local networkClient = game:GetService("NetworkClient")
-	return networkClient and networkClient.NetworkStatus == Enum.NetworkStatus.Connected
+	local connectivityService = game:GetService("ConnectivityService")
+	return connectivityService and connectivityService.NetworkStatus == Enum.NetworkStatus.Connected
 end
 
 --[[

@@ -16,8 +16,9 @@ local StyleGuide = RR.get("ReplicatedStorage.StyleGuide")
 local UIUtils = RR.get("ReplicatedStorage.Utils.UIUtils")
 local SoftShadow = RR.get("ReplicatedStorage.Utils.SoftShadow")
 local GradientUtil = RR.get("ReplicatedStorage.Utils.GradientUtil")
-local DailyRewardClient = RR.get("StarterPlayerScripts.DailysUI.DailyRewardClient")
-local DailyRewardAnimations = RR.get("StarterPlayerScripts.DailysUI.DailyRewardAnimations")
+local Maid = RR.get("ReplicatedStorage.Utils.Maid")
+local DailyRewardClient = RR.get(script.Parent.DailyRewardClient)
+local DailyRewardAnimations = RR.get(script.Parent.DailyRewardAnimations)
 
 -- ========= CONSTANTS =========
 local SLATE_GRAY = Color3.fromRGB(71, 85, 105)
@@ -33,7 +34,7 @@ function DailyRewardUI.new()
 
 	-- Initialize DailyRewardClient
 	self._client = DailyRewardClient.new()
-	self._maid = require(game.ReplicatedStorage.Utils.Maid).new()
+	self._maid = Maid.new()
 	self._isVisible = false
 
 	-- Create the main ScreenGui
@@ -1022,5 +1023,8 @@ function DailyRewardUI:destroy()
 
 	self._maid:DoCleaning()
 end
+
+local dailyRewardUI = DailyRewardUI.new()
+dailyRewardUI:show()
 
 return DailyRewardUI

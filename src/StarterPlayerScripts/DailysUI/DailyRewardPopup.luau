@@ -14,8 +14,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RR = require(ReplicatedStorage.Utils.RobustRequire)
 local StyleGuide = RR.get("ReplicatedStorage.StyleGuide")
 local SoftShadow = RR.get("ReplicatedStorage.Utils.SoftShadow")
-local GradientUtil = RR.get("ReplicatedStorage.Utils.GradientUtil")
-local DailyRewardAnimations = RR.get("StarterPlayerScripts.DailysUI.DailyRewardAnimations")
+-- local DailyRewardAnimations = RR.get("StarterPlayerScripts.DailysUI.DailyRewardAnimations")
 
 -- Constants
 local SLATE_GRAY = Color3.fromRGB(71, 85, 105)
