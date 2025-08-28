@@ -21,8 +21,7 @@ local mainHUDBindings = {
 	{
 		button = "MainPanel.Left.DailysButton",
 		handler = function()
-			-- TODO: Implement DailysButton functionality
-			print("Clicked DailysButton")
+            -- TODO: Implement DailysButton functionality
 		end,
 	},
 	{

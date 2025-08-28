@@ -71,8 +71,8 @@ local function createSlot(name: string, iconId: string, delayIndex: number?): Fr
 	timer.BackgroundTransparency = 1
 	timer.TextSize = 20
 	timer.AnchorPoint = Vector2.new(0.5, 0)
-	timer.Position = UDim2.new(0.5, 0, 1, -24)
-	timer.Size = UDim2.new(1, -6, 0, 20)
+	timer.Position = UDim2.fromScale(0.5, 1) + UDim2.fromOffset(0, -24)
+	timer.Size = UDim2.fromScale(1, 0) + UDim2.fromOffset(-6, 20)
 	timer.TextStrokeColor3 = Color3.new(0, 0, 0)
 	timer.TextStrokeTransparency = 0.42
 	timer.ZIndex = 28

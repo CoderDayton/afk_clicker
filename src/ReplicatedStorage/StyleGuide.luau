@@ -70,11 +70,13 @@ StyleGuide.Glow = {
 	Gold = Color3.fromRGB(255, 210, 80),
 }
 
+local _mainFont = "rbxasset://fonts/families/GothamSSm.json"
+
 -- Typography (unchanged)
 StyleGuide.Typography = {
-	Header = font("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.ExtraBold),
-	Body = font("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Medium),
-	Regular = font("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular),
+	Header = font(_mainFont, Enum.FontWeight.ExtraBold),
+	Body = font(_mainFont, Enum.FontWeight.Medium),
+	Regular = font(_mainFont, Enum.FontWeight.Regular),
 	Sizes = { XS = 12, S = 14, M = 16, L = 20, XL = 24, XXL = 32 },
 }
 

@@ -244,10 +244,11 @@ function UIAnimator.open(gui: GuiObject, opts: AnimationOptions?)
 	end
 	if opts.ScaleFrom then
 		local scale = opts.ScaleFrom
-		gui.Size = UDim2.new(
+		gui.Size = UDim2.fromScale(
 			props.Size.X.Scale * scale,
+			props.Size.Y.Scale * scale
+		) + UDim2.fromOffset(
 			props.Size.X.Offset * scale,
-			props.Size.Y.Scale * scale,
 			props.Size.Y.Offset * scale
 		)
 	end
@@ -355,10 +356,11 @@ function UIAnimator.close(gui: GuiObject, opts: AnimationOptions?)
 	local targetSize = props.Size
 	if opts.ScaleTo then
 		local scale = opts.ScaleTo
-		targetSize = UDim2.new(
+		targetSize = UDim2.fromScale(
 			props.Size.X.Scale * scale,
+			props.Size.Y.Scale * scale
+		) + UDim2.fromOffset(
 			props.Size.X.Offset * scale,
-			props.Size.Y.Scale * scale,
 			props.Size.Y.Offset * scale
 		)
 	end

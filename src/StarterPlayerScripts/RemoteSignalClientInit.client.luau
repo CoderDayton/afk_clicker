@@ -8,6 +8,9 @@ local SIGNAL_NAMES = {
 	"PlaySoundRemote",
     "PlaySoundLocal",
     "SetupButtonsLocal",
+    "DailyRewardClaim",
+    "DailyRewardStatus", 
+    "DailyRewardResult",
 }
 
 for _, name in ipairs(SIGNAL_NAMES) do

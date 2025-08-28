@@ -113,7 +113,7 @@ function UIUtils.SetupOrUpdateBillboard(podium, config, info)
 		mainLabel = Instance.new("TextLabel")
 		mainLabel.Name = "MainBillboardLabel"
 		mainLabel.Size = UDim2.fromScale(1, 1)
-		mainLabel.Position = UDim2.new(0, 0, 0, 0)
+		mainLabel.Position = UDim2.fromScale(0, 0)
 		mainLabel.BackgroundTransparency = 1
 		mainLabel.TextColor3 = config.MainColor or Color3.fromRGB(255, 255, 90)
 		mainLabel.TextStrokeTransparency = 0.28
